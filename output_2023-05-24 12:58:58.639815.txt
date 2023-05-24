@@ -1,0 +1,186 @@
+notebook_path: article.ipynb
+CHECK RESSOURCES
+CHECK URL
+URL: https://licensebuttons.net/l/by/4.0/88x31.png)](https://creativecommons.org/licenses/by/4.0/ is valid: False
+URL: https://creativecommons.org/licenses/by/4.0/ is valid: True
+URL: https://licensebuttons.net/l/by-nc-nd/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/ is valid: False
+URL: https://creativecommons.org/licenses/by-nc-nd/4.0/ is valid: True
+CHECK HTML
+found in the cell: [![cc-by](https://licensebuttons.net/l/by/4.0/88x31.png)](https://creativecommons.org/licenses/by/4.0/) 
+©<AUTHOR or ORGANIZATION / FUNDER>. Published by De Gruyter in cooperation with the University of Luxembourg Centre for Contemporary and Digital History. This is an Open Access article distributed under the terms of the [Creative Commons Attribution License CC-BY](https://creativecommons.org/licenses/by/4.0/)
+
+found in the cell: [![cc-by-nc-nd](https://licensebuttons.net/l/by-nc-nd/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/) 
+©<AUTHOR or ORGANIZATION / FUNDER>. Published by De Gruyter in cooperation with the University of Luxembourg Centre for Contemporary and Digital History. This is an Open Access article distributed under the terms of the [Creative Commons Attribution License CC-BY-NC-ND](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+found in the cell: # The following is the introductory paragraph to: Little, Daniel, "Philosophy of History", The Stanford Encyclopedia of Philosophy (Spring 2022 Edition), Edward N. Zalta (ed.), URL = <https://plato.stanford.edu/archives/spr2022/entries/history/>
+
+from IPython.display import Markdown
+
+main_text = "Main Text:\n\nThe concept of history plays a fundamental role in human thought. It invokes notions of human agency, change, the role of material circumstances in human affairs, and the putative meaning of historical events. It raises the possibility of “learning from history.” And it suggests the possibility of better understanding ourselves in the present, by understanding the forces, choices, and circumstances that brought us to our current situation. It is therefore unsurprising that philosophers have sometimes turned their attention to efforts to examine history itself and the nature of historical knowledge. These reflections can be grouped together into a body of work called “philosophy of history.” This work is heterogeneous, comprising analyses and arguments of idealists, positivists, logicians, theologians, and others, and moving back and forth over the divides between European and Anglo-American philosophy, and between hermeneutics and positivism.\n\nGiven the plurality of voices within the “philosophy of history,” it is impossible to give one definition of the field that suits all these approaches. In fact, it is misleading to imagine that we refer to a single philosophical tradition when we invoke the phrase, “philosophy of history,” because the strands of research characterized here rarely engage in dialogue with each other. Still, we can usefully think of philosophers’ writings about history as clustering around several large questions, involving metaphysics, hermeneutics, epistemology, and ethics: (1) What does history consist of—individual actions, social structures, periods and regions, civilizations, large causal processes, divine intervention? (2) Does history as a whole have meaning, structure, or direction, beyond the individual events and actions that make it up? (3) What is involved in our knowing, representing, and explaining history? (4) To what extent do facts about human history create moral responsibilities for the present generation?"
+display(Markdown("""Little, Daniel. "Philosophy of History", The Stanford Encyclopedia of Philosophy (Spring 2022 Edition), Edward N. Zalta (ed.) <https://plato.stanford.edu/archives/spr2022/entries/history/>\n\n""" + main_text))
+found in the cell: # Script for visualizing transcripts. Coded with assistance from GPT-4.
+
+import difflib  
+from difflib import SequenceMatcher 
+from IPython.display import display, HTML
+
+def highlight_char_diff(line1, line2):
+    matcher = difflib.SequenceMatcher(None, line1, line2)
+    html_line1 = ""
+    html_line2 = ""
+
+    for tag, i1, i2, j1, j2 in matcher.get_opcodes():
+        if tag == "equal":
+            html_line1 += line1[i1:i2]
+            html_line2 += line2[j1:j2]
+        elif tag == "replace":
+            html_line1 += f'<span style="background-color: #ffaaaa;">{line1[i1:i2]}</span>'
+            html_line2 += f'<span style="background-color: #aaffaa;">{line2[j1:j2]}</span>'
+        elif tag == "delete":
+            html_line1 += f'<span style="background-color: #ffaaaa;">{line1[i1:i2]}</span>'
+            html_line2 += " " * (i2 - i1)
+        elif tag == "insert":
+            html_line1 += " " * (j2 - j1)
+            html_line2 += f'<span style="background-color: #aaffaa;">{line2[j1:j2]}</span>'
+
+    return html_line1, html_line2
+
+def compare_transcripts_v2(transcript1, transcript2):
+    differ = difflib.unified_diff(transcript1.splitlines(), transcript2.splitlines(), lineterm="")
+    diff_table = "<table>"
+    line_counter = 1
+
+    for line in differ:
+        if line.startswith("+"):
+            _, highlighted_line = highlight_char_diff("", line[1:])
+            diff_table += f'<tr><td style="text-align: right;">{line_counter}</td><td style="text-align: left;">{highlighted_line}</td></tr>'
+        elif line.startswith("-"):
+            highlighted_line, _ = highlight_char_diff(line[1:], "")
+            diff_table += f'<tr><td style="text-align: right;">{line_counter}</td><td style="text-align: left;">{highlighted_line}</td></tr>'
+        elif line.startswith("@@"):
+            diff_table += f'<tr><td style="text-align: left; background-color: #e0e0e0;" colspan="2">{line}</td></tr>'
+        else:
+            diff_table += f'<tr><td style="text-align: right;">{line_counter}</td><td style="text-align: left;">{line}</td></tr>'
+            line_counter += 1
+
+    diff_table += "</table>"
+    return diff_table
+
+#html_comparison_v2 = compare_transcripts_v2(diarized_whisper_transcript, original_transcript)
+html_comparison_v2 = compare_transcripts_v2(original_transcript, diarized_whisper_transcript)
+
+display(HTML(f'<p><strong>Differences between original transcript (red) vs. Whisper (green):</strong></p>'))
+display(HTML(html_comparison_v2))
+found in the cell: # This script compares an OCR output of the image above with human transcription. 
+# Words in red are from the OCR corrections, words in green are from the human transcription.
+
+import difflib
+from IPython.display import display, HTML
+
+ocr_output_1 = 'NUR EIN FILM? NUR EIN\nUnverloeschbar tief haben sich uns die Bilder des Grauens einge- praegt, die jeder von uns dieser Tage in dem ersten amerikanischen Armeefilm aus Deutschland sah. Er schuetterung und Ent setzen haben Jeden Fuehlenden verstummen las sen, aber die Unmenschlichkeit, von "Deutschen" auf deutschem Bo- den begangen, lassst den Gesitte- ten nicht schweigend darueberhin- gehen.\nDante setzt in seinem Werk: 1 "Die goettliche Komoedie" ueber den Eingang zur Hoelle die Worte: "Lasst fahren alle Hoffnungen 1hr, die ihr hier eintritt."\nDiese Worte koonnen ueber je- dem K.Z.-Lager Deutschlands ge standen haben; denn die Bilder des Schreckens und Grauens, wie sie Dante von der Hoelle entwirft, ver- blassen vor dieser schaurigen Wirklichkeit, die sich hier auf Er den unter lebenden Menschen im Herzen Europas abspielte. Was wir sahen, war dabei wohl nur ein kleiner Ausschnitt, wenn wir beden- ken, dass diese Tragoedie seit 1933 unzaehlige Opfer forderte.'
+human_corrected_output_1 = 'NUR EIN FILM?\nUnverloeschbar tief haben sich uns die Bilder des Grauens eingepraegt, die jeder von uns dieser Tage in dem ersten amerikanischen Armeefilm aus Deutschland sah. Erschuetterung und Entsetzen haben jeden Fuehlenden verstummen lassen, aber die Unmenschlichkeit, von "Deutschen" auf deutschem Boden begangen, laesst den Gesitteten nicht schweigend darueberhingehen.\nDante setzt in seinem Werk: "Die goettliche Komoedie" ueber den Eingang zur Hoelle die Worte: "Lasst fahren alle Hoffnungen ihr, die ihr hier eintritt."\nDiese Worte koennen ueber jedem K.Z.-Lager Deutschlands gestanden haben; denn die Bilder des Schreckens und Grauens, wie sie Dante von der Hoelle entwirft, verblassen vor dieser schaurigen Wirklichkeit, die sich hier auf Erden unter lebenden Menschen im Herzen Europas abspielte. Was wir sahen, war dabei wohl nur ein kleiner Ausschnitt, wenn wir bedenken, dass diese Tragoedie seit 1933 unzaehlige Opfer forderte.'
+
+differ = difflib.Differ()
+diff1 = list(differ.compare(ocr_output_1.split(), human_corrected_output_1.split()))
+
+def ocr1_vs_human_1(diff1):
+    result1 = []
+    for word in diff1:
+        if word.startswith('+'):
+            result1.append(f'<span style="color:green;background-color:#e6ffe6;">{word[2:]}</span>')
+        elif word.startswith('-'):
+            result1.append(f'<span style="color:red;background-color:#ffe6e6;">{word[2:]}</span>')
+        elif word.startswith(' '):
+            result1.append(word[2:])
+    return ' '.join(result1)
+
+colored_diff_1 = ocr1_vs_human_1(diff1)
+
+display(HTML(f'<p><strong>Differences between OCR Output (red) vs Human Transcription (green):</strong></p><p>{colored_diff_1}</p>'))
+found in the cell: # OpenAI completion using the GPT-4 model with the OCR correction prompt.
+
+query = openai.ChatCompletion.create(
+                      model="gpt-4",
+                      messages=[
+                            {"role": "assistant", "content": ocr_prompt},
+                            {"role": "user", "content": ocr_output_1}
+                        ]
+                    )
+                             
+gpt4_output_1 = query['choices'][0]['message']['content']
+
+# Comparing GPT-4's output with the initial OCR scan results.
+
+differ = difflib.Differ()
+diff = list(differ.compare(gpt4_output_1.split(), human_corrected_output_1.split()))
+
+def gpt4_vs_human_1(diff2):
+    result = []
+    for word in diff:
+        if word.startswith('+'):
+            result.append(f'<span style="color:green;background-color:#e6ffe6;">{word[2:]}</span>')
+        elif word.startswith('-'):
+            result.append(f'<span style="color:red;background-color:#ffe6e6;">{word[2:]}</span>')
+        elif word.startswith(' '):
+            result.append(word[2:])
+    return ' '.join(result)
+
+colored_diff_2 = gpt4_vs_human_1(diff)
+
+display(HTML(f'<p><strong>Differences between GPT-4 Output (red) vs Human Transcription (green):</strong></p><p>{colored_diff_2}</p>'))
+display(HTML(f'<p><strong>Differences between OCR Output (red) vs Human Transcription (green):</strong></p><p>{colored_diff_1}</p>'))
+found in the cell: # OpenAI completion using the GPT-4 model.
+
+ocr_output_2 = "Zum Deleit:\nDie neue Lagerzeitung ist nun erschienen. Ja eis ist nun ehr eine unengoare Totesche reworden und we ate anime der Prisoner in stilien Stunden und in froler Laune ersonnon, ier findet ihr es schwarz auf weiss.\nUeber manches moschtet ihr nachdenken, ueber manches euch freuen, belaecheln koennt ihr aller, aber denkt iaren wie an es besser nachen koennte und seit mit Vorschlaegen nicht geizig und zurueckhaltend. Alles, or euch bewegt, arnstes und Heiteres, soll seinen Platz Tinden in dieren. Blaettern, nur Politik lasst ferne.\nWenn euch diese Zeitung Errunterung Unterhaltung und Anregung Ceben, so ist das Cer rchoenste Loin fuer die Nuehe aller, die um das Zustandekommen dieser Laerzeitung benueht war'n.\nwollen\nNoolimals, Jeder arbeite mit an diesen schoenen Werk, nach der Parole Alles von Prisoner fuer Prisoner wir die Zeitung fuehren.\nDas Erscheinen ist nonetlich zreimal vorgesehen. Einsendungen werden nach Hasnabe des verfuegberen Platzes aufgenommen, wobei kein besonders kritischer Kesesta oezue lich er kuenetlerischen Vollendun; an- Celest sird, inner in denkt daran sie viele Kameraden sure Geisteeprodukte lesen und wir doch eine Auerall treffen muessen.\nDie Sohriftleitung."
+human_corrected_output_2 = "Zum Geleit:\nDie neue Lagerzeitung ist nun erschienen. Ja sie ist nunmehr eine unlengoare Tatsache geworden und was die Oshirne [?] der Prisoner in stillen Stunden und in froher Laune ersonnen, hier findet ihr es schwarz auf weiss.\nUeber manches moechtet ihr nachdenken, ueber manches euch freuen, belaecheln koennt ihr aller, aber denkt daran wie man es besser machen koennte und seit mit Vorschlaegen nicht geizig und zurueckhaltend. Alles, was euch bewegt, Ernstes und Heiteres, soll seinen Platz finden in diesen Blaettern, nur Politik lasst ferne.\nWenn euch diese Zeitung Ermunterung, Unterhaltung und Anregung geben, so ist das der schoenste Lohn fuer die Muehe aller, die um das Zustandekommen dieser Lagerzeitung bemueht war'n.\nNochmals, jeder arbeite mit an diesem schoenen Werk, nach der Parole “Alles von Prisoner fuer Prisoner” wollen wir die Zeitung fuehren.\nDas Erscheinen ist monatlich zweimal vorgesehen. Einsendungen werden nach Hasnabe des verfuegbaren Platzes aufgenommen, wobei kein besonders kritischer Massstab bezueglich der künstlerischen Vollendung angelegt wird, immerhin denkt daran sie viele Kameraden eure Geistesprodukte lesen und wir doch eine Auswahl treffen muessen.\nDie Schriftleitung."
+
+query = openai.ChatCompletion.create(
+                      model="gpt-4",
+                      messages=[
+                            {"role": "assistant", "content": ocr_prompt},
+                            {"role": "user", "content": ocr_output_2}
+                        ]
+                    )
+
+gpt4_output_2 = query['choices'][0]['message']['content']
+
+
+# Comparing GPT-4's output with the human transcription.
+
+differ = difflib.Differ()
+diff2 = list(differ.compare(ocr_output_2.split(), human_corrected_output_2.split()))
+
+def ocr2_vs_human_2(diff):
+    result2 = []
+    for word in diff2:
+        if word.startswith('+'):
+            result2.append(f'<span style="color:green;background-color:#e6ffe6;">{word[2:]}</span>')
+        elif word.startswith('-'):
+            result2.append(f'<span style="color:red;background-color:#ffe6e6;">{word[2:]}</span>')
+        elif word.startswith(' '):
+            result2.append(word[2:])
+    return ' '.join(result2)
+
+colored_diff_3 = ocr2_vs_human_2(diff2)
+                           
+
+differ = difflib.Differ()
+diff3 = list(differ.compare(gpt4_output_2.split(), human_corrected_output_2.split()))
+
+def gpt4_vs_human_2(diff3):
+    result_3 = []
+    for word in diff3:
+        if word.startswith('+'):
+            result_3.append(f'<span style="color:green;background-color:#e6ffe6;">{word[2:]}</span>')
+        elif word.startswith('-'):
+            result_3.append(f'<span style="color:red;background-color:#ffe6e6;">{word[2:]}</span>')
+        elif word.startswith(' '):
+            result_3.append(word[2:])
+    return ' '.join(result_3)
+
+colored_diff_4 = gpt4_vs_human_2(diff3)
+
+display(HTML(f'<p><strong>Differences between GPT-4 Output (red) vs Human Transcription (green):</strong></p><p>{colored_diff_4}</p>'))
+display(HTML(f'<p><strong>Differences between OCR Output (red) vs Human Transcription (green):</strong></p><p>{colored_diff_3}</p>'))
+
+found in the cell: <div class="cite2c-biblio"></div>
