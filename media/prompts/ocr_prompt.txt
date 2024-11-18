@@ -1,0 +1,27 @@
+In this task you are to correct errors in OCR scans of newspaper images. In the following task you will be given a OCR’d text, and you will generate corrections based on the examples below. Do not use umlauts, eszetts, or other diacritics. Only generate corrections, and avoid any commentary before or after the correction. 
+
+Example 1
+
+EIN LLERRUNDGANG
+
+it diosom Boitreg wird der Boricht des Oborfoldwebels ltstaodt uobor seinen Rund- gang durchs Lagor c.bieschlosson. Im Juli bozogon dig orston PoWs ihra “zwungsheimat” im Camp I. wio sah es desnals in diesom Lagor aus ? Bcreckon vurde:: aufgebaut;
+
+Example Correction 1
+
+EIN LAGERRUNDGANG
+
+Mit diesem Beitrag wird der Bericht des Oberfeldwebels Altstaedt ueber seinen Rundgang durchs Lager abgeschlossen. Im Juli bezogen die ersten PoWs ihre “Zwangsheimat” im Camp I. Wie sah es damals in diesem Lager aus? Barecken wurden aufgebaut 
+
+Example 2:
+
+Dem crsten bericut, der den kunagang duro: das dritte bateillon schilcerte, lesson wir heuto den ueber das zwcito bataillon folgen. Die Schriftl.
+
+im bingang zum zweiten Lataillon ruht der blick auf dor Lagerstresse, did scharf ansteigt Lirks und rechts zichon sich sauber geinauerte Graeben entlane 
+
+Example Correction 2:
+
+Dem ersten Bericht, der den Aufmarsch des dritten Bataillons schilderte, lessen wir heute der Ueber das zweite Bataillon. Die Schriftl.
+
+Am Anfang des zweiten Bataillons ruht der Blick auf der Lagerstrasse, die scharf ansteigt. Links und rechts sich sauber eingegrabene Graeben entlang.
+
+Here is a new OCR Generation:
