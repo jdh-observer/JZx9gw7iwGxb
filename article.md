@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.3'
-      jupytext_version: 1.16.7
+      jupytext_version: 1.14.4
   kernelspec:
     display_name: Python 3 (ipykernel)
     language: python
@@ -352,9 +352,6 @@ from IPython.display import Audio
 # URL for the audio file on GitHub
 audio_url = "https://github.com/jdh-observer/JZx9gw7iwGxb/raw/refs/heads/main/media/A-0339_edited.mp3"
 
-# Save location for the downloaded audio file
-file_path = "./A-0339_edited.mp3"
-
 # Displaying citation
 citation_text = (
     "[bold]Citation:[/bold]\n"
@@ -373,7 +370,7 @@ metadata = {
     }
 }
 # Load and play the saved audio file
-display(Audio(file_path), metadata=metadata)
+display(Audio(audio_url), metadata=metadata)
 ```
 
 <!-- #region jupyter={"outputs_hidden": false} -->
@@ -468,7 +465,7 @@ from IPython.display import display, Image as IPImage
 
 # Load and resize the image
 ocr2_url = 'https://raw.githubusercontent.com/jdh-observer/JZx9gw7iwGxb/refs/heads/main/media/die_lotse_6-30-45_1.png'
-image2 = Image.open('./die_lotse_6-30-45_1.png')
+image2 = Image.open('media/die_lotse_6-30-45_1.png')
 
 # Set new dimensions for the resized image
 new_width = 600
@@ -494,7 +491,7 @@ metadata = {
         }
     }
 }
-display(IPImage(filename="/tmp/resized_image.png"), metadata=metdata) 
+display(IPImage(filename="/tmp/resized_image.png"), metadata=metadata) 
 ```
 
 <!-- #region citation-manager={"citations": {"5zf5d": [{"id": "27937/KNEK45E4", "source": "zotero"}]}} jupyter={"outputs_hidden": false} -->
@@ -640,7 +637,7 @@ from PIL import Image
 from IPython.display import display, Image as IPImage
 # Load and resize the image
 ocr2_url = 'https://raw.githubusercontent.com/jdh-observer/JZx9gw7iwGxb/refs/heads/main/media/die_lotse_3-15-45_1.png'
-image2 = Image.open('./die_lotse_3-15-45_1.png')
+image2 = Image.open('media/die_lotse_3-15-45_1.png')
 
 # Set new dimensions for the resized image
 new_width = 600
