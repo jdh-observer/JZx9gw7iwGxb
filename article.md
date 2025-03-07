@@ -349,11 +349,6 @@ The code below generates a audio player to listen to the audio segment. Listen a
 
 ```python jupyter={"outputs_hidden": false} slideshow={"slide_type": ""} tags=["sound-franklin-*"]
 from IPython.display import Audio
-from rich.console import Console
-
-# Initialize the console for rich output
-console = Console()
-
 # URL for the audio file on GitHub
 audio_url = "https://github.com/jdh-observer/JZx9gw7iwGxb/raw/refs/heads/main/media/A-0339_edited.mp3"
 
@@ -367,12 +362,18 @@ citation_text = (
     "July 27, 1990. Interview A-0339. Southern Oral History Program Collection (#4007).”[/italic]\n"
     "[dim]https://docsouth.unc.edu/sohp/A-0339/menu.html[/dim]"
 )
-
-# Print the citation with console output
-console.print(citation_text, width=console.size.width)
-
+metadata = {
+    "jdh": {
+        "object": {
+            "type": "image",
+            "source": [
+                citation_text
+            ]
+        }
+    }
+}
 # Load and play the saved audio file
-Audio(file_path)
+display(Audio(file_path), metadata=metadata)
 ```
 
 <!-- #region jupyter={"outputs_hidden": false} -->
@@ -464,10 +465,6 @@ The following image is from a newspaper published in a German prisoner-of-war ca
 ```python jupyter={"outputs_hidden": false} slideshow={"slide_type": ""} tags=["figure-lotse-6-30-1945-*"]
 from PIL import Image
 from IPython.display import display, Image as IPImage
-from rich.console import Console
-
-# Initialize the console for rich output
-console = Console()
 
 # Load and resize the image
 ocr2_url = 'https://raw.githubusercontent.com/jdh-observer/JZx9gw7iwGxb/refs/heads/main/media/die_lotse_6-30-45_1.png'
@@ -482,16 +479,22 @@ resized_image = image2.resize((new_width, new_height), Image.LANCZOS)
 
 # Convert the PIL image to a format compatible with IPython display 
 resized_image.save("/tmp/resized_image.png")  
-display(IPImage(filename="/tmp/resized_image.png")) 
-
 # Format the citation text using rich
 citation_text = (
     "[bold]Source:[/bold] [italic]“Nur ein Film?,”[/italic] [italic]Die Lotse[/italic] (Camp McCain, Mississippi), 30 June [not bold]1945[/not bold].\n"
     "In: Karl John Richard Arndt, editor. [italic]German P.O.W. Camp Papers[/italic]. (Washington, D.C.: Library of Congress Photoduplication Service, [not bold]1965)[/not bold]. Reel [not bold]9[/not bold]."
 )
-
-# Display the formatted citation
-console.print(citation_text)
+metadata = {
+    "jdh": {
+        "object": {
+            "type": "image",
+            "source": [
+                citation_text
+            ]
+        }
+    }
+}
+display(IPImage(filename="/tmp/resized_image.png"), metadata=metdata) 
 ```
 
 <!-- #region citation-manager={"citations": {"5zf5d": [{"id": "27937/KNEK45E4", "source": "zotero"}]}} jupyter={"outputs_hidden": false} -->
@@ -635,11 +638,6 @@ However, there are limits to this prompt engineering technique. Accuracy falls f
 ```python jupyter={"outputs_hidden": false} slideshow={"slide_type": ""} tags=["figure-lotse-3-15-1945-*"]
 from PIL import Image
 from IPython.display import display, Image as IPImage
-from rich.console import Console
-
-# Initialize the console for rich output
-console = Console()
-
 # Load and resize the image
 ocr2_url = 'https://raw.githubusercontent.com/jdh-observer/JZx9gw7iwGxb/refs/heads/main/media/die_lotse_3-15-45_1.png'
 image2 = Image.open('./die_lotse_3-15-45_1.png')
@@ -652,18 +650,23 @@ new_height = int(image2.height * (new_width / image2.width))
 resized_image = image2.resize((new_width, new_height), Image.LANCZOS)
 
 # Prepare the image for IPython display
-resized_image.save("/tmp/resized_image.png")  
-display(IPImage(filename="/tmp/resized_image.png")) 
-
+resized_image.save("/tmp/resized_image.png") 
 # Create formatted citation text with rich
 citation_text = (
     "[bold]Source:[/bold] [italic]“Zum Geleit,”[/italic] [italic]*Die Lotse*[/italic] (Camp McCain, Mississippi), 15 March [not bold]1945[/not bold].\n"
     "In: Karl John Richard Arndt, editor. [italic]*German P.O.W. Camp Papers*[/italic]. (Washington, D.C.: Library of Congress Photoduplication Service, [not bold]1965)[/not bold]. Reel [not bold]9[/not bold]."
 )
-
-# Display the formatted citation
-console.print(citation_text)
-
+metadata = {
+    "jdh": {
+        "object": {
+            "type": "image",
+            "source": [
+                citation_text
+            ]
+        }
+    }
+} 
+display(IPImage(filename="/tmp/resized_image.png"), metadata=metadata) 
 ```
 
 ```python jupyter={"outputs_hidden": false}
