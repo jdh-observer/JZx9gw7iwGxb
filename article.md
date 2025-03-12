@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.3'
-      jupytext_version: 1.14.4
+      jupytext_version: 1.16.6
   kernelspec:
     display_name: Python 3 (ipykernel)
     language: python
@@ -354,10 +354,10 @@ audio_url = "https://github.com/jdh-observer/JZx9gw7iwGxb/raw/refs/heads/main/me
 
 # Displaying citation
 citation_text = (
-    "[bold]Citation:[/bold]\n"
-    "[italic]“John Hope Franklin and John Egerton, Conducted by Oral History Interview with John Hope Franklin, "
-    "July 27, 1990. Interview A-0339. Southern Oral History Program Collection (#4007).”[/italic]\n"
-    "[dim]https://docsouth.unc.edu/sohp/A-0339/menu.html[/dim]"
+    "**Citation:**\n"
+    "*“John Hope Franklin and John Egerton, Conducted by Oral History Interview with John Hope Franklin, "
+    "July 27, 1990. Interview A-0339. Southern Oral History Program Collection (#4007).”*\n"
+    "https://docsouth.unc.edu/sohp/A-0339/menu.html"
 )
 metadata = {
     "jdh": {
@@ -478,8 +478,8 @@ resized_image = image2.resize((new_width, new_height), Image.LANCZOS)
 resized_image.save("/tmp/resized_image.png")  
 # Format the citation text using rich
 citation_text = (
-    "[bold]Source:[/bold] [italic]“Nur ein Film?,”[/italic] [italic]Die Lotse[/italic] (Camp McCain, Mississippi), 30 June [not bold]1945[/not bold].\n"
-    "In: Karl John Richard Arndt, editor. [italic]German P.O.W. Camp Papers[/italic]. (Washington, D.C.: Library of Congress Photoduplication Service, [not bold]1965)[/not bold]. Reel [not bold]9[/not bold]."
+    "**Source:** *“Nur ein Film?,”* *Die Lotse* (Camp McCain, Mississippi), 30 June 1945.\n"
+    "In: Karl John Richard Arndt, editor. *German P.O.W. Camp Papers*. (Washington, D.C.: Library of Congress Photoduplication Service, 1965). Reel 9."
 )
 metadata = {
     "jdh": {
@@ -650,8 +650,8 @@ resized_image = image2.resize((new_width, new_height), Image.LANCZOS)
 resized_image.save("/tmp/resized_image.png") 
 # Create formatted citation text with rich
 citation_text = (
-    "[bold]Source:[/bold] [italic]“Zum Geleit,”[/italic] [italic]*Die Lotse*[/italic] (Camp McCain, Mississippi), 15 March [not bold]1945[/not bold].\n"
-    "In: Karl John Richard Arndt, editor. [italic]*German P.O.W. Camp Papers*[/italic]. (Washington, D.C.: Library of Congress Photoduplication Service, [not bold]1965)[/not bold]. Reel [not bold]9[/not bold]."
+    "**Source:** *“Zum Geleit,”* *Die Lotse* (Camp McCain, Mississippi), 15 March 1945.\n"
+    "In: Karl John Richard Arndt, editor. *German P.O.W. Camp Papers*. (Washington, D.C.: Library of Congress Photoduplication Service, 1965). Reel 9."
 )
 metadata = {
     "jdh": {
