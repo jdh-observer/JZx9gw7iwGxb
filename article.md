@@ -592,7 +592,7 @@ The technical frontier in this domain is particularly jagged. LLMs demonstrate p
 The following examples demonstrate this variance. The image below is taken from a newspaper published in a German prisoner-of-war camp in the United States during World War II and later microfilmed by the Library of Congress. POW editors used American typesetting equipment in producing this publication, and the text lacks umlauts, eszetts, or other diacritics used in German language sources of the era. Such omissions give these texts a unique textual “accent” that helps illustrate LLM capacities for OCR correction.
 <!-- #endregion -->
 
-```python editable=true jupyter={"outputs_hidden": false} slideshow={"slide_type": ""}
+```python editable=true jupyter={"outputs_hidden": false} slideshow={"slide_type": ""} tags=["figure-lotse-6-30-1945-*"]
 from PIL import Image
 from IPython.display import display, Image as IPImage
 
@@ -1005,11 +1005,11 @@ The project of mapping the latent past - understanding how AI systems encode and
 I am grateful to Abraham Gibson for extending an invitation to present the preliminary research findings of this article with the Digital History Working Group in May 2022, organized by the Consortium For History of Science, Technology, and Medicine. I would also like to express my appreciation to my colleagues William Mattingly, Patrick Wadden, and Ian Crowe for their insightful commentary on the article, and to the editorial staff and reviewers for the Journal of Digital History. This article was facilitated by a sabbatical semester generously granted by the Office of Academic Affairs at Belmont Abbey College.
 <!-- #endregion -->
 
-<!-- #region editable=true jupyter={"outputs_hidden": false} slideshow={"slide_type": ""} -->
+<!-- #region editable=true jupyter={"outputs_hidden": false} slideshow={"slide_type": ""} tags=["hidden"]-->
 ## Bibliography
 <!-- #endregion -->
 
-<!-- #region editable=true jupyter={"outputs_hidden": false} slideshow={"slide_type": ""} -->
+<!-- #region editable=true jupyter={"outputs_hidden": false} slideshow={"slide_type": ""}  tags=["hidden"]-->
 <!-- BIBLIOGRAPHY START -->
 <div class="csl-bib-body">
   <div class="csl-entry"><i id="zotero|20666258/ZKMMJTTK"></i>Barton, N. T. L., Paul Resnick, and Genie. (2019, May 22). Algorithmic bias detection and mitigation: Best practices and policies to reduce consumer harms. <i>Brookings</i>. <a href="https://www.brookings.edu/research/algorithmic-bias-detection-and-mitigation-best-practices-and-policies-to-reduce-consumer-harms/">https://www.brookings.edu/research/algorithmic-bias-detection-and-mitigation-best-practices-and-policies-to-reduce-consumer-harms/</a></div>
