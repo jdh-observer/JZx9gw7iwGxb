@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    formats: ipynb,md
     text_representation:
       extension: .md
       format_name: markdown
@@ -513,8 +514,8 @@ def clean_html(text):
     return re.sub(r'<.*?>', '', text)
 
 # URLs for the transcripts on GitHub
-original_file_url = "https://raw.githubusercontent.com/Dr-Hutchinson/jdh_submission/refs/heads/main/media/vi_original_highlighted_2.txt"
-whisper_file_url = "https://raw.githubusercontent.com/Dr-Hutchinson/jdh_submission/refs/heads/main/media/vi_whisper_highlighted_2.txt"
+original_file_url = "https://raw.githubusercontent.com/jdh-observer/JZx9gw7iwGxb/refs/heads/main/media/vi_original_highlighted_2.txt"
+whisper_file_url = "https://raw.githubusercontent.com/jdh-observer/JZx9gw7iwGxb/refs/heads/main/media/vi_whisper_highlighted_2.txt"
 
 # Download and read the contents of the original and whisper transcripts
 original_transcript = requests.get(original_file_url).text
