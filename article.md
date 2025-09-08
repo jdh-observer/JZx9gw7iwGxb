@@ -6,9 +6,9 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.3'
-      jupytext_version: 1.17.3
+      jupytext_version: 1.16.6
   kernelspec:
-    display_name: Python 3 (system-wide)
+    display_name: Python 3 (ipykernel)
     language: python
     name: python3
 ---
@@ -479,7 +479,7 @@ audio_url = "https://github.com/jdh-observer/JZx9gw7iwGxb/raw/refs/heads/main/me
 
 # Displaying citation
 citation_text = (
-    "**Citation:¨¨\n"
+    "**Citation:**\n"
     "*“Interview with Bao Ninh, Conducted by Richard B. Verrone and Khanh Le. "
     "March 17, 2005. Interview OH0435. Vietnam Center and Sam Johnson Vietnam Archive, Texas Tech University.”*\n"
     "https://vva.vietnam.ttu.edu/repositories/2/digital_objects/412347"
