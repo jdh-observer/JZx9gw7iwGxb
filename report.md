@@ -940,8 +940,8 @@ Invalid URL (Other - 302): https://doi.org/10.1093/ahr/rhad363
 Invalid URL (Other - 302): https://doi.org/10.48550/arXiv.2210.08402
 Invalid URL (Other - 302): https://doi.org/10.48550/arXiv.2402.14207
 Invalid URL (Other - 302): https://doi.org/10.1093/ahr/rhad365
-Invalid URL (Other - 403): https://hcommons.org/deposits/item/hc:41973/
-Invalid URL (Other - 403): https://hcommons.org/deposits/item/hc:41973/</a></div>
+Invalid URL (Other - 202): https://hcommons.org/deposits/item/hc:41973/
+Invalid URL (Other - 202): https://hcommons.org/deposits/item/hc:41973/</a></div>
 Invalid URL (Other - 301): http://arxiv.org/abs/1706.03762
 Invalid URL (Other - 301): http://arxiv.org/abs/1706.03762</a></div>
 Invalid URL (Other - 302): https://doi.org/10.48550/arXiv.2407.12994
