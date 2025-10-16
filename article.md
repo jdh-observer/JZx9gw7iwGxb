@@ -17,11 +17,11 @@ jupyter:
 # Mapping the Latent Past: Assessing Large Language Models as Digital Tools through Source Criticism
 <!-- #endregion -->
 
-<!-- #region editable=true jupyter={"outputs_hidden": false} slideshow={"slide_type": ""} tags=["contributor"] -->
- ### anonym
-
-
+<!-- #region editable=true slideshow={"slide_type": ""} tags=["contributor"] -->
+ ### Daniel Hutchinson[![orcid](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0003-2759-5318)
+Belmont Abbey College
 <!-- #endregion -->
+
 
 <!-- #region jupyter={"outputs_hidden": false} tags=["copyright"] -->
 [![cc-by](https://licensebuttons.net/l/by/4.0/88x31.png)](https://creativecommons.org/licenses/by/4.0/) 
