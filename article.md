@@ -358,15 +358,15 @@ error_rate = wer(cleaned_original_transcript, cleaned_whisper_transcript)
 original_transcript = original_transcript.replace('\n', '<br>')
 whisper_transcript = whisper_transcript.replace('\n', '<br>')
 
-# Ensure that color highlighting also includes bolding
+# Ensure that colour highlighting also includes bolding
 whisper_transcript = whisper_transcript.replace(
-    'style="background-color: #fbb;"',
-    'style="background-color: #fbb; font-weight: bold;"'
+    'style="background-colour: #fbb;"',
+    'style="background-colour: #fbb; font-weight: bold;"'
 )
 
 original_transcript = original_transcript.replace(
-    'style="background-color: #bfb;"',
-    'style="background-color: #bfb; font-weight: bold;"'
+    'style="background-colour: #bfb;"',
+    'style="background-colour: #bfb; font-weight: bold;"'
 )
 
 # Display the two transcripts side by side using HTML in Jupyter
@@ -382,7 +382,7 @@ html_content = f'''
     </div>
 </div>
 <br><br>
-<div style="text-align: center;">
+<div style="text-align: centre;">
     <h4>Word Error Rate (WER) for Whisper: {error_rate:.2%}</h4>
 </div>
 '''
@@ -407,7 +407,7 @@ from rich.console import Console
 from rich.console import Console
 from rich.text import Text
 
-# Initialize the OpenAI client
+# Initialise the OpenAI client
 client = OpenAI()
 
 # URL for the audio file on GitHub
@@ -525,15 +525,15 @@ error_rate = wer(cleaned_original_transcript, cleaned_whisper_transcript)
 original_transcript = original_transcript.replace('\n', '<br>')
 whisper_transcript = whisper_transcript.replace('\n', '<br>')
 
-# Ensure that color highlighting also includes bolding
+# Ensure that colour highlighting also includes bolding
 whisper_transcript = whisper_transcript.replace(
-    'style="background-color: #fbb;"',
-    'style="background-color: #fbb; font-weight: bold;"'
+    'style="background-colour: #fbb;"',
+    'style="background-colour: #fbb; font-weight: bold;"'
 )
 
 original_transcript = original_transcript.replace(
-    'style="background-color: #bfb;"',
-    'style="background-color: #bfb; font-weight: bold;"'
+    'style="background-colour: #bfb;"',
+    'style="background-colour: #bfb; font-weight: bold;"'
 )
 
 # Display the two transcripts side by side using HTML in Jupyter
@@ -549,7 +549,7 @@ html_content = f'''
     </div>
 </div>
 <br><br>
-<div style="text-align: center;">
+<div style="text-align: centre;">
     <h4>Word Error Rate (WER) for Whisper: {error_rate:.2%}</h4>
 </div>
 '''
@@ -597,7 +597,7 @@ image2 = Image.open('media/die_lotse_6-30-45_1.png')
 new_width = 600
 new_height = int(image2.height * (new_width / image2.width))
 
-# Resize the image for better visualization
+# Resize the image for better visualisation
 resized_image = image2.resize((new_width, new_height), Image.LANCZOS)
 
 # Convert the PIL image to a format compatible with IPython display 
@@ -628,7 +628,7 @@ The following code block demonstrates an LLM’s facility in correcting a raw OC
 # Set your HF API token here 
 os.environ["HF_TOKEN"] = ""
 
-# Initialize Hugging Face Inference Client via Inference Endpoint
+# Initialise Hugging Face Inference Client via Inference Endpoint
 client = InferenceClient(
     provider="auto",
     api_key=os.environ["HF_TOKEN"]
@@ -654,9 +654,9 @@ def annotate_differences(diff, target):
     result = []
     for word in diff:
         if word.startswith('+') and target == 'ocr':
-            result.append(f'<span style="color:green;background-color:#e6ffe6;">{word[2:]}</span>')
+            result.append(f'<span style="colour:green;background-colour:#e6ffe6;">{word[2:]}</span>')
         elif word.startswith('-') and target == 'human':
-            result.append(f'<span style="color:red;background-color:#ffe6e6;">{word[2:]}</span>')
+            result.append(f'<span style="colour:red;background-colour:#ffe6e6;">{word[2:]}</span>')
         elif word.startswith(' '):
             result.append(word[2:])
     return ' '.join(result)
@@ -690,7 +690,7 @@ def run_comparison(ocr_output, corrected_output, title_ocr, title_corrected):
 
 from huggingface_hub import InferenceClient
 
-# Initialize Hugging Face client (assumes HF_TOKEN in env)
+# Initialise Hugging Face client (assumes HF_TOKEN in env)
 client = InferenceClient()
 
 # Load files
@@ -734,7 +734,7 @@ However, these defects can be partially mitigated by providing the model with mo
 
 from huggingface_hub import InferenceClient
 
-# Initialize Hugging Face client (assumes HF_TOKEN in env)
+# Initialise Hugging Face client (assumes HF_TOKEN in env)
 client = InferenceClient()
 
 # Load files
@@ -776,7 +776,7 @@ In using few-shot prompting the model now actually demonstrates improvement in t
 
 from openai import OpenAI
 
-# Initialize client (assumes OPENAI_API_KEY already set in env)
+# Initialise client (assumes OPENAI_API_KEY already set in env)
 client = OpenAI()
 
 # Load files
@@ -838,7 +838,7 @@ image2 = Image.open('media/die_lotse_3-15-45_1.png')
 new_width = 600
 new_height = int(image2.height * (new_width / image2.width))
 
-# Resize the image for better visualization
+# Resize the image for better visualisation
 resized_image = image2.resize((new_width, new_height), Image.LANCZOS)
 
 # Prepare the image for IPython display
@@ -872,7 +872,7 @@ from openai import OpenAI
 import base64
 import requests
 
-# Initialize OpenAI client (API key assumed to be loaded from env)
+# Initialise OpenAI client (API key assumed to be loaded from env)
 client = OpenAI()
 
 # Helper: Encode image as base64
