@@ -239,7 +239,7 @@ from rich.console import Console
 from rich.console import Console
 from rich.text import Text
 
-# Initialise the OpenAI client
+# Initialize the OpenAI client
 client = OpenAI()
 
 # URL for the audio file on GitHub
