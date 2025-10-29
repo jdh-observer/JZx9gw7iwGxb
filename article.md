@@ -17,7 +17,7 @@ jupyter:
 # Mapping the Latent Past: Assessing Large Language Models as Digital Tools through Source Criticism
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} tags=["contributor"] -->
+<!-- #region editable=true jupyter={"outputs_hidden": false} slideshow={"slide_type": ""} tags=["contributor"] -->
  ### Daniel Hutchinson[![orcid](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0003-2759-5318)
 Belmont Abbey College
 <!-- #endregion -->
@@ -360,12 +360,12 @@ whisper_transcript = whisper_transcript.replace('\n', '<br>')
 
 # Ensure that color highlighting also includes bolding
 whisper_transcript = whisper_transcript.replace(
-    'style="background-color: #7C0000;"',
+    'style="background-color: #fbb;"',
     'style="background-color: #7C0000; font-weight: bold;"'
 )
 
 original_transcript = original_transcript.replace(
-    'style="background-color: #007C00;"',
+    'style="background-color: #bfb;"',
     'style="background-color: #007C00; font-weight: bold;"'
 )
 
