@@ -209,7 +209,7 @@ In this test we’ll examine how Whisper’s training impacts its performance on
 <!-- #region citation-manager={"citations": {"8w84i": [{"id": "20666258/K7JFQAA5", "source": "zotero"}]}} editable=true jupyter={"outputs_hidden": false} slideshow={"slide_type": ""} tags=["hermeneutics"] -->
 The Whisper series is offered as a series of voice recognition and voice translation models across several tiers of computing power and available on sites like HuggingFace. However, for simplicity this demonstration code uses OpenAI’s API for the Whisper-2-large model. As of September 2024, OpenAI charged $0.36 per hour of recorded time for transcriptions using the API.
 
-For a detailed and informative tutorial on using and analysing Whisper, see: (<cite id="8w84i"><a href="#zotero%7C20666258%2FK7JFQAA5">(Schultz, 2024)</a></cite>)
+For a detailed and informative tutorial on using and analysing Whisper, see: (<cite id="8w84i"><a href="#zotero%7C20666258%2FK7JFQAA5">(Schultz, 2024)</a></cite>).
 
 <!-- #endregion -->
 
@@ -360,13 +360,13 @@ whisper_transcript = whisper_transcript.replace('\n', '<br>')
 
 # Ensure that color highlighting also includes bolding
 whisper_transcript = whisper_transcript.replace(
-    'style="background-color: #fbb;"',
-    'style="background-color: #fbb; font-weight: bold;"'
+    'style="background-color: #7C0000;"',
+    'style="background-color: #7C0000; font-weight: bold;"'
 )
 
 original_transcript = original_transcript.replace(
-    'style="background-color: #bfb;"',
-    'style="background-color: #bfb; font-weight: bold;"'
+    'style="background-color: #007C00;"',
+    'style="background-color: #007C00; font-weight: bold;"'
 )
 
 # Display the two transcripts side by side using HTML in Jupyter
@@ -527,13 +527,13 @@ whisper_transcript = whisper_transcript.replace('\n', '<br>')
 
 # Ensure that color highlighting also includes bolding
 whisper_transcript = whisper_transcript.replace(
-    'style="background-color: #fbb;"',
-    'style="background-color: #fbb; font-weight: bold;"'
+    'style="background-color: #7C0000;"',
+    'style="background-color: #7C0000; font-weight: bold;"'
 )
 
 original_transcript = original_transcript.replace(
-    'style="background-color: #bfb;"',
-    'style="background-color: #bfb; font-weight: bold;"'
+    'style="background-color: #007C00;"',
+    'style="background-color: #007C00; font-weight: bold;"'
 )
 
 # Display the two transcripts side by side using HTML in Jupyter
