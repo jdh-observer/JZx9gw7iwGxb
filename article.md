@@ -25,7 +25,7 @@ Belmont Abbey College
 
 <!-- #region jupyter={"outputs_hidden": false} tags=["copyright"] -->
 [![cc-by-nc-nd](https://licensebuttons.net/l/by-nc-nd/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/) 
-©<Daniel HUTCHINSON>. Published by De Gruyter in cooperation with the University of Luxembourg Centre for Contemporary and Digital History. This is an Open Access article distributed under the terms of the [Creative Commons Attribution License CC-BY-NC-ND](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+© Daniel HUTCHINSON. Published by De Gruyter in cooperation with the University of Luxembourg Centre for Contemporary and Digital History. This is an Open Access article distributed under the terms of the [Creative Commons Attribution License CC-BY-NC-ND](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 <!-- #endregion -->
 
 
@@ -527,13 +527,13 @@ whisper_transcript = whisper_transcript.replace('\n', '<br>')
 
 # Ensure that color highlighting also includes bolding
 whisper_transcript = whisper_transcript.replace(
-    'style="background-color: #7C0000;"',
-    'style="background-color: #7C0000; font-weight: bold;"'
+    'style="background-color:#fbb;"',
+    'style="background-color:#7C0000; font-weight: bold;"'
 )
 
 original_transcript = original_transcript.replace(
-    'style="background-color: #007C00;"',
-    'style="background-color: #007C00; font-weight: bold;"'
+    'style="background-color:#bfb;"',
+    'style="background-color:#007C00;font-weight: bold;"'
 )
 
 # Display the two transcripts side by side using HTML in Jupyter
@@ -1074,7 +1074,3 @@ I am grateful to Abraham Gibson for extending an invitation to present the preli
 </div>
 <!-- BIBLIOGRAPHY END -->
 <!-- #endregion -->
-
-```python editable=true jupyter={"outputs_hidden": false} slideshow={"slide_type": ""}
-
-```
